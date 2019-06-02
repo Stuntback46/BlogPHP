@@ -11,12 +11,8 @@ try {
                 post();
     
             }
-
-
-
-
             else {
-                throw new Exception('Aucun identifiant de billet/commentaire envoyé');
+                throw new Exception('No news/Comment sent');
             }
         }
         elseif ($_GET['action'] == 'addComment') {
@@ -25,11 +21,11 @@ try {
                     addComment($_GET['id'], $_POST['author'], $_POST['comment']);
                 }
                 else {
-                    throw new Exception('Tous les champs ne sont pas remplis !');
+                    throw new Exception('Please fill all field!');
                 }
             }
             else {
-                throw new Exception('Aucun identifiant de billet envoyé');
+                throw new Exception('No news ID sent');
             }
         }
 
@@ -41,7 +37,7 @@ try {
                
             }
             else {
-                throw new Exception('Aucun identifiant de billet/commentaire envoyé');
+                throw new Exception(''No news ID/Comment ID sent');
             }
         }
         elseif ($_GET['action'] == 'updateComment')
@@ -56,17 +52,14 @@ try {
 
              else
 
-                throw new Exception('Nouveau commentaire vide');
+                throw new Exception('New comment empty');
 
             }
             else
 
-                throw new Exception('Aucun identifiant de commentaire envoyé');
+                throw new Exception('No comment ID sent');
         }
-        
-
-
-        
+               
     }
     else {
         listPosts();
