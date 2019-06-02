@@ -1,8 +1,8 @@
-<?php $title = 'Erreur sur mon Blog'; ?>
+<?php $title = 'Error on my Blog'; ?>
 
 <?php ob_start(); ?>
-<h1>Mon super blog !</h1>
-<p>Derniers billets du blog :</p>
+<h1>My Awesome Blog!</h1>
+<p>Last News:</p>
 
 
 <?php
@@ -18,7 +18,7 @@ while ($data = $posts->fetch())
         <p>
             <?= nl2br(htmlspecialchars($data['content'])) ?>
             <br />
-            <em><a href="index.php?action=post&amp;id=<?= $data['id'] ?>">Commentaires</a></em>
+            <em><a href="index.php?action=post&amp;id=<?= $data['id'] ?>">Comments</a></em>
         </p>
     </div>
 <?php

@@ -1,8 +1,8 @@
 <?php $title = htmlspecialchars($post['title']); ?>
 
 <?php ob_start(); ?>
-<h1>Mon super blog !</h1>
-<p><a href="index.php">Retour à la liste des billets</a></p>
+<h1>My Awesome Blog</h1>
+<p><a href="index.php">Return to the news list</a></p>
 
 <div class="news">
     <h3>
@@ -15,14 +15,14 @@
     </p>
 </div>
 
-<h2>Commentaires</h2>
+<h2>Comments</h2>
 <p><strong><?= htmlspecialchars($comment['author']) ?></strong> le <?= $comment['comment_date_fr'] ?></p>
     <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
 
 <form action="index.php?action=updateComment&amp;id=<?=$post['id']?>&amp;idComment=<?=$comment['id']?>" method="post">
     <div>
-        <label for="comment">Commentaire</label><br />
-        <textarea id="comment" name="updatedComment"></textarea>
+        <label for="comment">Comment</label><br />
+        <textarea id="comment" name="updatedComment"><?= nl2br(htmlspecialchars($comment['comment'])) ?></textarea>
     </div>
     <div>
         <input type="submit" />

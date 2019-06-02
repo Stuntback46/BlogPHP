@@ -1,8 +1,8 @@
 <?php $title = htmlspecialchars($post['title']); ?>
 
 <?php ob_start(); ?>
-<h1>Mon super blog !</h1>
-<p><a href="index.php">Retour à la liste des billets</a></p>
+<h1>My awesome Blog !</h1>
+<p><a href="index.php">Return to the news list</a></p>
 
 <div class="news">
     <h3>
@@ -16,15 +16,15 @@
     </p>
 </div>
 
-<h2>Commentaires</h2>
+<h2>Comments</h2>
 
 <form action="index.php?action=addComment&amp;id=<?= $post['id'] ?>" method="post">
     <div>
-        <label for="author">Auteur</label><br />
+        <label for="author">Author</label><br />
         <input type="text" id="author" name="author" />
     </div>
     <div>
-        <label for="comment">Commentaire</label><br />
+        <label for="comment">Comment</label><br />
         <textarea id="comment" name="comment"></textarea>
     </div>
     <div>
@@ -38,7 +38,7 @@ while ($comment = $comments->fetch())
 ?>
     <p><strong><?= htmlspecialchars($comment['author']) ?></strong> le <?= $comment['comment_date_fr'] ?></p>
     <p><?= nl2br(htmlspecialchars($comment['comment'])) ?></p>
-    <em><a href="index.php?action=modifyComment&amp;id=<?=$comment['post_id']?>&amp;idComment=<?=$comment['id']?>">Modifier le commentaire</a></em>
+    <em><a href="index.php?action=modifyComment&amp;id=<?=$comment['post_id']?>&amp;idComment=<?=$comment['id']?>">Edit the comment</a></em>
 <?php
 }
 ?>
